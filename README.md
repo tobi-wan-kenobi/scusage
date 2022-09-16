@@ -2,7 +2,7 @@ scusage
 =====================================================
 ![License](https://img.shields.io/github/license/tobi-wan-kenobi/scusage)
 
-`scusage` is a small tool to analyze your shortcut usage (hence the name -
+`scusage` is a small tool to analyze your keyboard shortcut usage (hence the name -
 **S**hort**C**ut **usage**) to help you find optimal keybindings.
 
 Currently, it only supports the i3 window manager.
