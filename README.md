@@ -7,6 +7,12 @@ scusage
 
 Currently, it only supports the i3 window manager.
 
+# Installation
+
+```
+$ pip install --user scusage
+```
+
 # Usage
 
 `scusage` has no parameters, you simply run it, use your window manager, and
