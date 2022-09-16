@@ -33,8 +33,8 @@ Mod4+r: exec "rofi -modi window,drun,ssh,combi -show combi"                     
 Mod4+1: workspace "1:"                                                           2 (6%)   ========
 Mod4+s: mark swapee; focus right; swap container with mark swapee; unmark swapee  2 (6%)   ========
 Mod4+8: workspace "8:辶"                                                          1 (3%)   ====
-Mod4+9: workspace "9:ﱶ"                                                           1 (3%)   ====
-Mod4+0: workspace "10:ﱶ"                                                          1 (3%)   ====
+Mod4+9: workspace "9: "                                                           1 (3%)   ====
+Mod4+0: workspace "10: "                                                          1 (3%)   ====
 ```
 
 The idea is that this tool helps you identify which shortcuts you use most often,
