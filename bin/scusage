@@ -23,7 +23,6 @@ def run():
 
 def bar(amount, max):
     width = 30
-    print(f"{width} {amount} {max}")
     return "="*int((amount*width)/max)
 
 def print_result(counts):
@@ -35,7 +34,7 @@ def print_result(counts):
         if not max:
             max = v
         data.append([k, f"{v} ({v/total*100:.0f}%)", bar(v, max)])
-    print(tabulate.tabulate(data, headers=["binding", "count", ""]))
+    print(tabulate.tabulate(data, headers=["shortcut", "count", ""]))
 
 if __name__ == "__main__":
     run()
