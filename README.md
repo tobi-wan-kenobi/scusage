@@ -1,5 +1,7 @@
 scusage
 =====================================================
+[![PyPI version](https://badge.fury.io/py/scusage.svg)](https://badge.fury.io/py/scusage)
+[![CodeQL](https://github.com/tobi-wan-kenobi/scusage/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/tobi-wan-kenobi/scusage/actions/workflows/codeql-analysis.yml)
 ![License](https://img.shields.io/github/license/tobi-wan-kenobi/scusage)
 
 `scusage` is a small tool to analyze your keyboard shortcut usage (hence the name -
