@@ -38,4 +38,4 @@ Mod4+0: workspace "10:ﱶ"                                                      
 ```
 
 The idea is that this tool helps you identify which shortcuts you use most often,
-and help you bind them to convenient & easy to reach key combinations.
+so that you can bind them to convenient and easy to reach key combinations.
