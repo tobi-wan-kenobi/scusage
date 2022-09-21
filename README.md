@@ -37,6 +37,7 @@ Mod4+s: mark swapee; focus right; swap container with mark swapee; unmark swapee
 Mod4+8: workspace "8:  "                                                          1 (3%)   ====
 Mod4+9: workspace "9: "                                                           1 (3%)   ====
 Mod4+0: workspace "10: "                                                          1 (3%)   ====
+File saved to /home/tux/.config/scusage.txt
 ```
 
 The idea is that this tool helps you identify which shortcuts you use most often,
