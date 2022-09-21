@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import i3ipc
 import tabulate
 
@@ -26,6 +27,7 @@ def bar(amount, max):
     return "="*int((amount*width)/max)
 
 def print_result(counts):
+    outpath = f"{os.getenv('XDG_CONFIG_HOME')}/scusage.txt"
     data = []
     print("")
     total = sum(counts.values())
@@ -34,7 +36,12 @@ def print_result(counts):
         if not max:
             max = v
         data.append([k, f"{v} ({v/total*100:.0f}%)", bar(v, max)])
-    print(tabulate.tabulate(data, headers=["shortcut", "count", ""]))
+
+    result = tabulate.tabulate(data, headers=["shortcut", "count", ""])
+    outfile = open(outpath, "a")
+    outfile.write(f"\n{result}\n")
+    outfile.close()
+    print(f"{result}\r\nFile saved to {outpath}\r\n")
 
 if __name__ == "__main__":
     run()
