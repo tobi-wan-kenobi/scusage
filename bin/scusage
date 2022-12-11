@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
 
+import os
 import i3ipc
+import argparse
 import tabulate
 
-def run():
+def run(args):
     i3 = i3ipc.Connection()
 
     counts = {}
+    cachefile = os.path.expanduser(args.file)
+    if cachefile and not os.path.exists(cachefile):
+        os.makedirs(os.path.dirname(cachefile), mode=0o755, exist_ok=True)
+    if args.resume and os.path.exists(cachefile):
+        with open(cachefile) as f:
+            counts = json.load(f)
+
     def on_binding(_, event):
         binding = event.binding
         sym = f"'{binding.input_code}'"
@@ -19,6 +28,9 @@ def run():
 
     i3.main()
 
+    if cachefile:
+        with open(cachefile, "w") as f:
+            f.write(json.dumps(count))
     print_result(counts)
 
 def bar(amount, max):
@@ -37,4 +49,7 @@ def print_result(counts):
     print(tabulate.tabulate(data, headers=["shortcut", "count", ""]))
 
 if __name__ == "__main__":
-    run()
+    parser = argparse.ArgumentParser(description="monitor and report i3 keyboard shortcut usage")
+    parser.add_argument("--file", "-f", type=str, help="file for reading and writing usage data. if not specified, no data will be written.", default=None)
+    parser.add_argument("--resume", action="store_true", help="if provided, data is appended to <FILE>. otherwise, <FILE> is overwritten")
+    run(parser.parse_args())
