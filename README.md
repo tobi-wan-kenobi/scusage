@@ -17,8 +17,20 @@ $ pip install --user scusage
 
 # Usage
 
-`scusage` has no parameters, you simply run it, use your window manager, and
-when you want to get the results, you terminate `scusage` using `Ctrl+C`.
+```
+$ ./bin/scusage -h
+usage: scusage [-h] [--file FILE] [--resume]
+
+monitor and report i3 keyboard shortcut usage
+
+options:
+  -h, --help            show this help message and exit
+  --file FILE, -f FILE  file for reading and writing usage data. if not specified, no data will be written.
+  --resume              if provided, data is appended to <FILE>. otherwise, <FILE> is overwritten
+```
+
+If you run `scusage` without parameters, you simply use your window manager, and
+when you want to get the results, you terminate `scusage` using `Ctrl+C`:
 
 ```
 $ scusage
@@ -41,3 +53,6 @@ Mod4+0: workspace "10: "                                                        
 
 The idea is that this tool helps you identify which shortcuts you use most often,
 so that you can bind them to convenient and easy to reach key combinations.
+
+For collecting data across window manager sessions, you can use `--file`
+and `--resume` to store and load usage data from a file.
